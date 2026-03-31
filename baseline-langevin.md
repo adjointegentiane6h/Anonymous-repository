@@ -1,7 +1,7 @@
 **MNIST benchmark: our per-instance unlearning baseline vs Langevin Unlearning (LU).** 
 We compare the two methods on the same **10-class MNIST classification task**, but with **different training objectives**. 
 
-![](image.png)
+![](ours-vs-langevin.png)
 
 Our method uses a **ridge regression objective with one-hot targets** and predicts the class by argmax over the 10 output coordinates, whereas LU uses its native **multiclass logistic / softmax cross-entropy objective**. 
 In addition, LU calibrates a **single noise level** before training, used identically during learning and unlearning and uniformly for deleting any point, whereas our method uses a fixed $\sigma_1$ during learning and then calibrates a specific $\sigma_{\mathrm{unlearn}}$ at deletion time for the particular point to be removed. 
